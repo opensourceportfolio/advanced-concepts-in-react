@@ -1,0 +1,13 @@
+.Timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.Timeline-loadMore {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.Tweet + .Tweet {
+  margin-top: 20px;
+}

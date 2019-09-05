@@ -1,0 +1,9 @@
+.LeftMenu {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.Button + .Button {
+  margin-top: 20px;
+}

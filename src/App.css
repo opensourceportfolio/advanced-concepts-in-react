@@ -1,0 +1,29 @@
+@import-normalize;
+html,
+body,
+#root,
+.App {
+  height: 100%;
+  width: 100%;
+}
+
+.App-main {
+  display: flex;
+  padding-top: 80px;
+}
+
+.App-column {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  flex: 1;
+}
+
+.App-column--left {
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.App-column--right {
+  align-items: flex-start;
+}

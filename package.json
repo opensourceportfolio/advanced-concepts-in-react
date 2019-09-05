@@ -1,0 +1,35 @@
+{
+  "name": "advanced-concepts-in-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@twitter/feather": "^3.0.0",
+    "@twitter/feather-component-navigation-bar": "^3.0.0-rc.2.experimental.0",
+    "@twitter/feather-component-navigation-bar-react": "^3.0.0-rc.2.experimental.0",
+    "@twitter/twitter-text": "^3.2.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-scripts": "3.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
