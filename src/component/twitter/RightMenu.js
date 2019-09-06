@@ -8,8 +8,10 @@ export default function LeftMenu() {
     <div className="RightMenu">
       <Module>
         <Module.Header titleChildren="Trends for you" />
-        <Module.Body>#AdvancedConcepts</Module.Body>
-        <Module.Body>#InReact</Module.Body>
+        <Module.Body>#Advanced</Module.Body>
+        <Module.Body>#Concets</Module.Body>
+        <Module.Body>#In</Module.Body>
+        <Module.Body>#React</Module.Body>
       </Module>
     </div>
   );

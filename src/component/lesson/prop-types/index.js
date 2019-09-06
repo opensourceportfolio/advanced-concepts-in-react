@@ -1,5 +1,5 @@
 import React from "react";
 
-export function PropTypes() {
+export default function PropTypes() {
   return <span>PropTypes</span>;
 }

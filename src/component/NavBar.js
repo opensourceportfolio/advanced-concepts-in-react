@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import User from "@twitter/feather-component-user-react";
 import * as NavigationBar from "@twitter/feather-component-navigation-bar-react";
 import "@twitter/feather-component-navigation-bar/dist/css/feather-component-navigation-bar.css";
 import "@twitter/feather-core/dist/css/feather-core.css";
 
-export function NavBar() {
+export default function NavBar({ user }) {
   return (
     <NavigationBar.Twitter brandName="Learn" brandUrl="/" position="fixed">
       <NavigationBar.ItemGroup align="start">
@@ -28,6 +29,16 @@ export function NavBar() {
         </NavigationBar.Item>
         <NavigationBar.Item>
           <Link to="/lesson/error-boundaries">Error Boundaries</Link>
+        </NavigationBar.Item>
+      </NavigationBar.ItemGroup>
+      <NavigationBar.ItemGroup align="end">
+        <NavigationBar.Item>
+          <User
+            layout="horizontal"
+            name={user.name.first}
+            profileImageUrl={user.picture.thumbnail}
+            screenName={`@${user.login.username}`}
+          />
         </NavigationBar.Item>
       </NavigationBar.ItemGroup>
     </NavigationBar.Twitter>
