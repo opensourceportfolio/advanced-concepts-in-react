@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@twitter/feather-component-button-react";
 import Tweet from "@twitter/feather-component-tweet-react";
-import { getTweets } from "../api";
+import { getTweets } from "../../api";
 import "./Timeline.css";
 
 export default class Timeline extends React.Component {

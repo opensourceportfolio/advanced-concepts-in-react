@@ -1,27 +1,22 @@
 import React from "react";
-import "@twitter/feather-component-tweet/dist/css/feather-component-tweet.css";
-import Timeline from "./component/Timeline";
-import LeftMenu from "./component/LeftMenu";
-import RightMenu from "./component/RightMenu";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 import { NavBar } from "./component/NavBar";
+import { Twitter } from "./component/twitter";
+import { PropTypes } from "./component/lesson/prop-types";
+
+import "@twitter/feather-component-tweet/dist/css/feather-component-tweet.css";
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <NavBar></NavBar>
-      <div className="App-main">
-        <div className="App-column App-column--left">
-          <LeftMenu></LeftMenu>
-        </div>
-        <div className="App-column">
-          <Timeline></Timeline>
-        </div>
-        <div className="App-column App-column--right">
-          <RightMenu></RightMenu>
-        </div>
+    <Router>
+      <div>
+        <NavBar></NavBar>
+        <Route path="/" exact component={Twitter} />
+        <Route path="/lesson/proptypes" exact component={PropTypes} />
       </div>
-    </div>
+    </Router>
   );
 }
 
