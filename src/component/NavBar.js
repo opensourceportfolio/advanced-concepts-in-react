@@ -28,7 +28,7 @@ export default function NavBar({ user }) {
           <Link to="/lesson/portals">Portals</Link>
         </NavigationBar.Item>
         <NavigationBar.Item>
-          <Link to="/lesson/error-boundaries">Error Boundaries</Link>
+          <Link to="/lesson/error-boundaries">Render Props</Link>
         </NavigationBar.Item>
       </NavigationBar.ItemGroup>
       <NavigationBar.ItemGroup align="end">

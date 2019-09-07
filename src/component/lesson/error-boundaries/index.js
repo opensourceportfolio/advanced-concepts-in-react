@@ -1,7 +1,7 @@
 import React from "react";
 import CollapsibleMenu from "../../CollapsibleMenu";
 
-export default function PropTypes() {
+export default function ErrorBoundaries() {
   return (
     <CollapsibleMenu title="More info">
       QUnit is by calling one of the object that are embedded in JavaScript, and
