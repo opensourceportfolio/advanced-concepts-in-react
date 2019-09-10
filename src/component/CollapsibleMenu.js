@@ -1,15 +1,15 @@
 import React from "react";
 import "./CollapsibleMenu.css";
 
-export default function CollapsibleMenu({ title, children }) {
+export default function CollapsibleMenu({ id, title, children }) {
   return (
     <div className="CollapsibleMenu">
       <input
-        id="collapsible"
+        id={id}
         className="CollapsibleMenu-toggleButton"
         type="checkbox"
       ></input>
-      <label htmlFor="collapsible" className="CollapsibleMenu-toggle">
+      <label htmlFor={id} className="CollapsibleMenu-toggle">
         {title}
       </label>
       <div className="CollapsibleMenu-content">

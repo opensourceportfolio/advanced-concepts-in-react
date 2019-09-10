@@ -55,7 +55,7 @@
 }
 
 .CollapsibleMenu-toggleButton:checked + .CollapsibleMenu-toggle + .CollapsibleMenu-content {
-  max-height: 350px;
+  max-height: 800px;
 }
 
 .CollapsibleMenu-toggleButton:checked + .CollapsibleMenu-toggle {

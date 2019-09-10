@@ -1,0 +1,8 @@
+.Lesson {
+  margin: 0 auto;
+  width: 800px;
+}
+
+.Lesson section + section {
+  padding-bottom: 20px;
+}
