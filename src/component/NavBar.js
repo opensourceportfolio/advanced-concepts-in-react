@@ -34,12 +34,12 @@ export default function NavBar({ user }) {
       {user && (
         <NavigationBar.ItemGroup align="end">
           <NavigationBar.Item>
-            <User
+            {user && <User
               layout="horizontal"
               name={user.name.first}
               profileImageUrl={user.picture.thumbnail}
               screenName={`@${user.login.username}`}
-            />
+            />}
           </NavigationBar.Item>
         </NavigationBar.ItemGroup>
       )}

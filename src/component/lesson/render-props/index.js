@@ -60,7 +60,7 @@ const childrenPropUsageCode = `<ClickTracker>
 
 const answerKeyUserLoaderCode = `// our children prop is now a function
 return this.state.user ? (
-  this.props.children(this.state.user)
+  this.props.children(user)
 ) : (
   <span class="Icon Icon--loadingLarge" aria-label="Loading"></span>
 );`;
@@ -98,8 +98,7 @@ const answerKeyRouteCode = `<Router>
       />
     </React.Fragment>
   )}
-</UserLoader>
-</Router>`;
+</UserLoader>`;
 
 export default function RenderProps() {
   return (
@@ -113,9 +112,11 @@ export default function RenderProps() {
           Sometimes multiple components want to access the same state and
           inherit similar behaviour. We do this through component composition.
           For example, take the following scenario:
-          <SyntaxHighlighter language="jsx">
-            {initialScenarioCode}
-          </SyntaxHighlighter>
+        </p>
+        <SyntaxHighlighter language="jsx">
+          {initialScenarioCode}
+        </SyntaxHighlighter>
+        <p>
           What if we want to count the clicks of another component? This is
           where we can use render props.
         </p>
@@ -139,14 +140,12 @@ export default function RenderProps() {
           consequence of using <code>children</code> is that it is not necessary
           to explicitly read it like the other attributes. Instead we can do the
           following:
-          <SyntaxHighlighter language="jsx">
-            {childrenPropCode}
-          </SyntaxHighlighter>
-          Now you can use it like this:
-          <SyntaxHighlighter language="jsx">
-            {childrenPropUsageCode}
-          </SyntaxHighlighter>
         </p>
+        <SyntaxHighlighter language="jsx">{childrenPropCode}</SyntaxHighlighter>
+        <p>Now you can use it like this:</p>
+        <SyntaxHighlighter language="jsx">
+          {childrenPropUsageCode}
+        </SyntaxHighlighter>
       </section>
       <section>
         <h2>Exercise</h2>

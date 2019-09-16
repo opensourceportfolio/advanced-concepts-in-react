@@ -13,9 +13,7 @@ export default function CollapsibleMenu({ id, title, children }) {
         {title}
       </label>
       <div className="CollapsibleMenu-content">
-        <div className="CollapsibleMenu-contentInner">
-          <p>{children}</p>
-        </div>
+        <div className="CollapsibleMenu-contentInner">{children}</div>
       </div>
     </div>
   );
