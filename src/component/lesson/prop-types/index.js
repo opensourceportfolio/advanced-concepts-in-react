@@ -53,6 +53,26 @@ Blog.propTypes = {
   name: PropTypes.string.isRequired,
 };
 `;
+
+const answerKeyTimelineCode = `Timeline.propTypes = {
+  tweets: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onLoadMoreHandler: PropTypes.func.isRequired,
+}`;
+
+const answerKeyTweetWriterCode = `TweetWriter.propTypes = {
+  onTweet: PropTypes.func.isRequired,
+}`;
+
+const answerKeyCollapsibleMenuCode = `CollapsibleMenu.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  children: PropTypes.any.isRequired
+};`;
+
+const answerKeyNavBarCode = `NavBar.propTypes = {
+  user: PropTypes.object.isRequired,
+}`;
+
 export default function PropTypes() {
   return (
     <div className="Lesson">
@@ -113,11 +133,35 @@ export default function PropTypes() {
       </section>
       <section>
         <h2>More Information</h2>
-        <p>?</p>
+        <p>
+          There are a ton more PropTypes supported in react. You can find more
+          of them <a href="reactjs.org/docs/">here</a>.
+        </p>
       </section>
       <section>
         <h2>Exercise</h2>
-        <p>?</p>
+        <p>
+          Our <code>Timeline</code>, <code>CollapsibleMenu</code>,{" "}
+          <code>TweetWriter</code>, and <code>NavBar</code> are missing
+          PropTypes. Can you fix it?
+        </p>
+      </section>
+      <section>
+        <h2>Answer key</h2>
+        <CollapsibleMenu id="Collapsible--answerKey" title="Answer key">
+          <SyntaxHighlighter language="jsx">
+            {answerKeyTimelineCode}
+          </SyntaxHighlighter>
+          <SyntaxHighlighter language="jsx">
+            {answerKeyTweetWriterCode}
+          </SyntaxHighlighter>
+          <SyntaxHighlighter language="jsx">
+            {answerKeyCollapsibleMenuCode}
+          </SyntaxHighlighter>
+          <SyntaxHighlighter language="jsx">
+            {answerKeyNavBarCode}
+          </SyntaxHighlighter>
+        </CollapsibleMenu>
       </section>
     </div>
   );
