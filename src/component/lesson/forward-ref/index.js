@@ -45,6 +45,23 @@ import TwitterButton from "./TwitterButton";
 const ref = React.createRef();
 <TwitterButton text="Tweet" ref={ref} />;`;
 
+const answerKeyTweetWriterCode = `// we need to create a component that forwards the refs
+const TweetWriterComponent = React.forwardRef((props, ref) => {
+  return <TweetWriter {...props} forwardRef={ref}></TweetWriter>
+})
+
+export default TweetWriterComponent;`;
+
+const answerKeyTwitterHandlerCode = `// twitter/index.js
+tweetWriterRef = React.createRef();`;
+
+const answerKeyTwitterRefCode = `<TweetWriter onTweet={this._onTweetHandler} ref={this.tweetWriterRef}></TweetWriter>`;
+
+const answerKeyTwitterMountCode = `componentDidMount = () => {
+  this._onLoadMoreHandler();
+  this.tweetWriterRef.current.focus();
+};`;
+
 export default function ForwardRef() {
   return (
     <div className="Lesson">
@@ -54,9 +71,8 @@ export default function ForwardRef() {
       <section>
         <h2>Why should I care?</h2>
         <p>
-          Gives you the ability to forward a <code>ref</code> down the component
-          tree. It can be useful to expose the underlying DOM element to the
-          outside world.
+          Gives you a first class ability to expose the underlying DOM element
+          of a child to the parent.
         </p>
       </section>
       <section>
@@ -106,12 +122,30 @@ export default function ForwardRef() {
         </p>
       </section>
       <section>
-        <h2>More Information</h2>
-        <p>?</p>
+        <h2>Exercise</h2>
+        <p>
+          Would it be great if we focused on the tweet writer as soon as the
+          application loaded? Let's make it happen using forward refs. This is a
+          challenging exercise! Hint. <code>TweetWriter</code> already takes a{" "}
+          <code>forwardRef</code> prop.
+        </p>
       </section>
       <section>
-        <h2>Exercise</h2>
-        <p>?</p>
+        <h2>Answer key</h2>
+        <CollapsibleMenu id="Collapsible--answerKey" title="Answer key">
+          <SyntaxHighlighter language="jsx">
+            {answerKeyTweetWriterCode}
+          </SyntaxHighlighter>
+          <SyntaxHighlighter language="jsx">
+            {answerKeyTwitterHandlerCode}
+          </SyntaxHighlighter>
+          <SyntaxHighlighter language="jsx">
+            {answerKeyTwitterRefCode}
+          </SyntaxHighlighter>
+          <SyntaxHighlighter language="jsx">
+            {answerKeyTwitterMountCode}
+          </SyntaxHighlighter>
+        </CollapsibleMenu>
       </section>
     </div>
   );

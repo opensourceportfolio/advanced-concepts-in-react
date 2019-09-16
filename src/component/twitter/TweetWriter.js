@@ -22,7 +22,7 @@ class TweetWriter extends React.Component {
 
   render() {
     const { tweetValue } = this.state;
-    const { onTweet } = this.props;
+    const { onTweet, forwardRef } = this.props;
 
     return (
       <div className="TweetWriter">
@@ -31,6 +31,9 @@ class TweetWriter extends React.Component {
             <FormField.Label>Tweet</FormField.Label>
             <FormTextarea
               onChange={this._handleTextareaChange}
+              otherProps={{
+                ref: forwardRef
+              }}
               value={tweetValue}
             />
             <FormField.CharacterCounter
