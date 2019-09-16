@@ -75,16 +75,12 @@ const answerKeyMountCode = `// We do not need to fetch data on mount in App
 // }
   `;
 
-const answerKeyAppCode = `// Our app becomes simple now.
-const app = () => <Twitter user={user}></Twitter>;
-`;
-
 const answerKeyRouteCode = `<Router>
 <UserLoader>
   {user => (
     <React.Fragment>
       <NavBar user={user}></NavBar>
-      <Route path="/" exact render={app} />
+      <Route path="/" exact render={app(user)} />
       <Route path="/lesson/proptypes" exact component={PropTypes} />
       <Route path="/lesson/fragments" exact component={Fragment} />
       <Route path="/lesson/forward-ref" exact component={ForwardRef} />
@@ -155,10 +151,12 @@ export default function RenderProps() {
       <section>
         <h2>Exercise</h2>
         <p>
-          Wouldn't it be great to see a spinner while the user is loading? Turns
-          out we have a component for that already. It is called{" "}
-          <code>UserLoader</code>. Unfortunately it isn't very reusable. Let's
-          fix that using render props and wrap our app in it.
+          <code>App</code> is doing a lot. It is doing our routing, our
+          rendering of our Twitter app, and fetching our user. Let's refactor it
+          by extracting the fetching to another component. Oh Look! We already
+          have a component that does it. It's called <code>UserLoader</code>.
+          Unfortunately it is hard to reuse. Let's convert to to use render
+          props and use it to fetch the user.
         </p>
       </section>
       <section>
@@ -169,9 +167,6 @@ export default function RenderProps() {
           </SyntaxHighlighter>
           <SyntaxHighlighter language="jsx">
             {answerKeyMountCode}
-          </SyntaxHighlighter>
-          <SyntaxHighlighter language="jsx">
-            {answerKeyAppCode}
           </SyntaxHighlighter>
           <SyntaxHighlighter language="jsx">
             {answerKeyRouteCode}

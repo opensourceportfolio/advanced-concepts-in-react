@@ -33,12 +33,17 @@ class App extends React.Component {
 
   render() {
     const { user } = this.state;
-    const app = () => (user ? <Twitter user={user}></Twitter> : "Loading...");
+    const app = user => routeProps =>
+      user ? (
+        <Twitter {...routeProps} user={user}></Twitter>
+      ) : (
+        <span className="Icon Icon--loadingLarge" aria-label="Loading"></span>
+      );
 
     return (
       <Router>
         <NavBar user={user}></NavBar>
-        <Route path="/" exact render={app} />
+        <Route path="/" exact render={app(user)} />
         <Route path="/lesson/proptypes" exact component={PropTypes} />
         <Route path="/lesson/fragments" exact component={Fragment} />
         <Route path="/lesson/forward-ref" exact component={ForwardRef} />
