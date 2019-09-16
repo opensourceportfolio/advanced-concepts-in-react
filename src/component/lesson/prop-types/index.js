@@ -32,7 +32,7 @@ function Tweet(props) {
 Tweet.propTypes = {
   theme: PropTypes.oneOf(['dark', 'light']).isRequired
 };
-`;     
+`;
 
 const example3 = `import PropTypes from 'prop-types';
 
@@ -71,13 +71,13 @@ export default function PropTypes() {
         <ul>
           <li>
             Import PropTypes
-            <SyntaxHighlighter language="javascript">
+            <SyntaxHighlighter language="jsx">
               {importStatement}
             </SyntaxHighlighter>
           </li>
           <li>
             Define the properties
-            <SyntaxHighlighter language="javascript">
+            <SyntaxHighlighter language="jsx">
               {propTypeStatement}
             </SyntaxHighlighter>
           </li>
@@ -91,18 +91,14 @@ export default function PropTypes() {
           string.
         </p>
         <CollapsibleMenu id="Collapsible--optionalProp" title="Optional props">
-          <SyntaxHighlighter language="javascript">
-            {example1}
-          </SyntaxHighlighter>
+          <SyntaxHighlighter language="jsx">{example1}</SyntaxHighlighter>
         </CollapsibleMenu>
       </section>
       <section>
         <h2>Examples #2</h2>
         <p>Functional component with one required property of type enum.</p>
         <CollapsibleMenu id="Collapsible--requiredProp" title="Required Props">
-          <SyntaxHighlighter language="javascript">
-            {example2}
-          </SyntaxHighlighter>
+          <SyntaxHighlighter language="jsx">{example2}</SyntaxHighlighter>
         </CollapsibleMenu>
       </section>
       <section>
@@ -112,9 +108,7 @@ export default function PropTypes() {
           optional title.
         </p>
         <CollapsibleMenu id="Collapsible--multipleProps" title="Multiple Props">
-          <SyntaxHighlighter language="javascript">
-            {example3}
-          </SyntaxHighlighter>
+          <SyntaxHighlighter language="jsx">{example3}</SyntaxHighlighter>
         </CollapsibleMenu>
       </section>
       <section>

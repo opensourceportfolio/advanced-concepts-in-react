@@ -19,16 +19,16 @@ export default function NavBar({ user }) {
           <Link to="/lesson/forward-ref">Forward Ref</Link>
         </NavigationBar.Item>
         <NavigationBar.Item>
-          <Link to="/lesson/error-boundaries">Error Boundaries</Link>
+          <Link to="/lesson/render-props">Render Props</Link>
         </NavigationBar.Item>
         <NavigationBar.Item>
           <Link to="/lesson/context">Context</Link>
         </NavigationBar.Item>
         <NavigationBar.Item>
-          <Link to="/lesson/portals">Portals</Link>
+          <Link to="/lesson/error-boundaries">Error Boundaries</Link>
         </NavigationBar.Item>
         <NavigationBar.Item>
-          <Link to="/lesson/error-boundaries">Render Props</Link>
+          <Link to="/lesson/portals">Portals</Link>
         </NavigationBar.Item>
       </NavigationBar.ItemGroup>
       <NavigationBar.ItemGroup align="end">

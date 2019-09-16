@@ -51,15 +51,11 @@ export default function Fragment() {
         <ul>
           <li>
             Find a component that returns an unnecessary wrapper element
-            <SyntaxHighlighter language="javascript">
-              {originalCode}
-            </SyntaxHighlighter>
+            <SyntaxHighlighter language="jsx">{originalCode}</SyntaxHighlighter>
           </li>
           <li>
             Replace it with <code>React.Fragment</code>
-            <SyntaxHighlighter language="javascript">
-              {fragmentCode}
-            </SyntaxHighlighter>
+            <SyntaxHighlighter language="jsx">{fragmentCode}</SyntaxHighlighter>
           </li>
           <li>Win</li>
         </ul>
@@ -68,9 +64,7 @@ export default function Fragment() {
         <h2>Examples #1</h2>
         <p>Basic example forwarding a ref to a button</p>
         <CollapsibleMenu id="Collapsible--multipleNodes" title="Multiple nodes">
-          <SyntaxHighlighter language="javascript">
-            {example1}
-          </SyntaxHighlighter>
+          <SyntaxHighlighter language="jsx">{example1}</SyntaxHighlighter>
         </CollapsibleMenu>
       </section>
       <section>

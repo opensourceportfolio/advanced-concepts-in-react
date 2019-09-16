@@ -17,8 +17,8 @@
 
   padding: 1rem;
 
-  color: #a77b0e;
-  background: #fae042;
+  color: black;
+  background: #1da1f2;
 
   cursor: pointer;
 
@@ -27,7 +27,7 @@
 }
 
 .CollapsibleMenu-toggle:hover {
-  color: #7c5a0b;
+  color: #657786;
 }
 
 .CollapsibleMenu-toggle::before {
@@ -64,7 +64,7 @@
 }
 
 .CollapsibleMenu-content .CollapsibleMenu-contentInner {
-  background: rgba(250, 224, 66, 0.2);
+  background: #f5f8fa;
   border-bottom: 1px solid rgba(250, 224, 66, 0.45);
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;

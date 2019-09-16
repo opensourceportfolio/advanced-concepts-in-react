@@ -33,17 +33,17 @@ function withLogRender(Component) {
     return <LogRender {...props} forwardedRef={ref} />;
   });
 }
-`
+`;
 
 const higherOrderRefCode2 = `// TwitterButton.js
 function TweetButton(props) {...}
-export default withLogRender(TwitterButton);` 
+export default withLogRender(TwitterButton);`;
 
 const higherOrderRefCode3 = `// App.js
 import TwitterButton from "./TwitterButton";
 
 const ref = React.createRef();
-<TwitterButton text="Tweet" ref={ref} />;`
+<TwitterButton text="Tweet" ref={ref} />;`;
 
 export default function ForwardRef() {
   return (
@@ -64,21 +64,19 @@ export default function ForwardRef() {
         <ul>
           <li>
             Create a component that needs to expose a ref to the outside.
-            <SyntaxHighlighter language="javascript">
-              {originalCode}
-            </SyntaxHighlighter>
+            <SyntaxHighlighter language="jsx">{originalCode}</SyntaxHighlighter>
           </li>
           <li>
             Use <code>React.forwardRef</code> to specify that you expect a{" "}
             <code>ref</code> to be passed in
-            <SyntaxHighlighter language="javascript">
+            <SyntaxHighlighter language="jsx">
               {forwardRefCode}
             </SyntaxHighlighter>
           </li>
           <li>
             Use <code>React.createRef</code> to create ref to a DOM element and
             pass it in from the parent
-            <SyntaxHighlighter language="javascript">
+            <SyntaxHighlighter language="jsx">
               {forwardingRefCode}
             </SyntaxHighlighter>
           </li>
@@ -92,13 +90,13 @@ export default function ForwardRef() {
           id="Collapsible--higherOrderRef"
           title="Higher Order Ref"
         >
-          <SyntaxHighlighter language="javascript">
+          <SyntaxHighlighter language="jsx">
             {higherOrderRefCode1}
           </SyntaxHighlighter>
-          <SyntaxHighlighter language="javascript">
+          <SyntaxHighlighter language="jsx">
             {higherOrderRefCode2}
           </SyntaxHighlighter>
-          <SyntaxHighlighter language="javascript">
+          <SyntaxHighlighter language="jsx">
             {higherOrderRefCode3}
           </SyntaxHighlighter>
         </CollapsibleMenu>
