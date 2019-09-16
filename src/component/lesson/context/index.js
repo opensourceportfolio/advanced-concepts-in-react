@@ -41,6 +41,21 @@ const contextTypeCode = `class MyNavigationBar {
 
 }`;
 
+const answerKeyUserProvider1 = `import React from "react";
+
+const { Consumer, Provider } = React.createContext("");
+
+function UserProvider({ children }) {
+  return <Provider>{children}</Provider>;
+}
+
+export { Consumer, Provider, UserProvider };`
+
+const answerKeyUserProvider2 = `// Update our component to grab the user
+<UserLoader>
+  {user => <Provider value={user}>{children}</Provider>}
+</UserLoader>`
+
 export default function Context() {
   return (
     <div className="Lesson">
@@ -119,12 +134,32 @@ export default function Context() {
         </CollapsibleMenu>
       </section>
       <section>
-        <h2>More Information</h2>
-        <p>?</p>
+        <h2>Exercise</h2>
+        <p>
+          Retrieving the user is now really easy but we still need to pass it
+          down to the <code>NavBar</code>, <code>Twitter</code>, and{" "}
+          <code>Timeline</code>. As we enhance this app, I can definitely see
+          user being needed in many other components. Let's simplify passing
+          down user by passing it as part of a context.
+        </p>
       </section>
       <section>
-        <h2>Exercise</h2>
-        <p>?</p>
+        <h2>Answer key</h2>
+        <CollapsibleMenu id="Collapsible--answerKey" title="Answer key">
+          <SyntaxHighlighter language="jsx">
+            {answerKeyUserProvider1}
+          </SyntaxHighlighter>
+          <SyntaxHighlighter language="jsx">
+            {answerKeyUserProvider2}
+          </SyntaxHighlighter>
+          <SyntaxHighlighter language="jsx">
+            {/* {answerKeyRouteCode} */}
+          </SyntaxHighlighter>
+        </CollapsibleMenu>
+        <p>
+          As a bonus, you can now convert <code>App</code> to a stateless
+          component.
+        </p>
       </section>
     </div>
   );

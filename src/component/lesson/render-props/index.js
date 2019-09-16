@@ -171,6 +171,10 @@ export default function RenderProps() {
             {answerKeyRouteCode}
           </SyntaxHighlighter>
         </CollapsibleMenu>
+        <p>
+          As a bonus, you can now convert <code>App</code> to a stateless
+          component.
+        </p>
       </section>
     </div>
   );

@@ -38,8 +38,9 @@ export default class Twitter extends React.Component {
 
   render() {
     const { tweets } = this.state;
+    const { user } = this.props;
 
-    return (
+    return user ? (
       <div className="Twitter">
         <div className="Twitter-main">
           <div className="Twitter-column Twitter-column--left">
@@ -57,6 +58,8 @@ export default class Twitter extends React.Component {
           </div>
         </div>
       </div>
+    ) : (
+      <span className="Icon Icon--loadingLarge" aria-label="Loading"></span>
     );
   }
 }
