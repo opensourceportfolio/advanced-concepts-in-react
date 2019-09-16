@@ -31,16 +31,18 @@ export default function NavBar({ user }) {
           <Link to="/lesson/portals">Portals</Link>
         </NavigationBar.Item>
       </NavigationBar.ItemGroup>
-      <NavigationBar.ItemGroup align="end">
-        <NavigationBar.Item>
-          <User
-            layout="horizontal"
-            name={user.name.first}
-            profileImageUrl={user.picture.thumbnail}
-            screenName={`@${user.login.username}`}
-          />
-        </NavigationBar.Item>
-      </NavigationBar.ItemGroup>
+      {user && (
+        <NavigationBar.ItemGroup align="end">
+          <NavigationBar.Item>
+            <User
+              layout="horizontal"
+              name={user.name.first}
+              profileImageUrl={user.picture.thumbnail}
+              screenName={`@${user.login.username}`}
+            />
+          </NavigationBar.Item>
+        </NavigationBar.ItemGroup>
+      )}
     </NavigationBar.Twitter>
   );
 }

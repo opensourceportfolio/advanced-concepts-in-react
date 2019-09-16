@@ -105,12 +105,12 @@ export default function RenderProps() {
         </p>
       </section>
       <section>
-        <h2>More Information</h2>
-        <p>?</p>
-      </section>
-      <section>
         <h2>Exercise</h2>
-        <p>?</p>
+        <p>
+          Wouldn't it be great to see a spinner while the user is loading? Turns
+          out we have a component for that already. Unfortunately it isn't very
+          reusable. Let's fix that using render props.
+        </p>
       </section>
     </div>
   );

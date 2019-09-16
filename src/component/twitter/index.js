@@ -8,11 +8,10 @@ import { getTweet, getTweets } from "../../api";
 import "./Twitter.css";
 
 export default class Twitter extends React.Component {
-  constructor({ user }) {
+  constructor() {
     super();
     this.state = {
-      tweets: [],
-      user
+      tweets: []
     };
   }
 
@@ -21,10 +20,12 @@ export default class Twitter extends React.Component {
   };
 
   _onTweetHandler = tweetText => {
-    const { tweets, user } = this.state;
+    const { tweets } = this.state;
+    const { user } = this.props;
+
     const newTweet = {
       ...getTweet(user),
-      text: tweetText,
+      text: tweetText
     };
 
     this.setState({ tweets: [newTweet, ...tweets] });

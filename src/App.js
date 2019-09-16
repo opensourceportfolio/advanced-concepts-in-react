@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import { getUser } from "./api";
+import { authenticateUser } from "./api";
 
 import NavBar from "./component/NavBar";
 import Twitter from "./component/twitter";
@@ -20,15 +20,25 @@ import Context from "./component/lesson/context";
 class App extends React.Component {
   constructor() {
     super();
-    this.state = { user: getUser() };
+    this.state = { user: null };
   }
+
+  componentDidMount() {
+    authenticateUser().then(user => {
+      this.setState({
+        user
+      });
+    });
+  }
+
   render() {
     const { user } = this.state;
+    const app = () => (user ? <Twitter user={user}></Twitter> : "Loading...");
 
     return (
       <Router>
         <NavBar user={user}></NavBar>
-        <Route path="/" exact render={() => <Twitter user={user}></Twitter>} />
+        <Route path="/" exact render={app} />
         <Route path="/lesson/proptypes" exact component={PropTypes} />
         <Route path="/lesson/fragments" exact component={Fragment} />
         <Route path="/lesson/forward-ref" exact component={ForwardRef} />

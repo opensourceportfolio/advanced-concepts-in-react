@@ -15,16 +15,22 @@ function random(list) {
   return list[Math.floor(Math.random() * list.length)];
 }
 
-function getQuote() {
+function delay(time, fn) {
+  return new Promise(res => {
+    setTimeout(() => res(fn()), time);
+  });
+}
+
+function generateRandomText() {
   return random(quoteData);
 }
 
-export function getUser() {
+function generateRandomUser() {
   return random(userData);
 }
 
 export function getTweet(user) {
-  const u = user ? user : getUser();
+  const u = user ? user : generateRandomUser();
 
   return {
     displayType: "timeline",
@@ -35,15 +41,19 @@ export function getTweet(user) {
     replyCount: randomNumber(0, 100),
     retweetCount: randomNumber(0, 100),
     showActions: true,
-    text: getQuote(),
+    text: generateRandomText(),
     user: {
       profileImageUrl: u.picture.thumbnail,
       name: `${u.name.first} ${u.name.last}`,
       screenName: u.login.username
-    },
+    }
   };
 }
 
+export async function authenticateUser() {
+  return delay(1000, () => generateRandomUser());
+}
+
 export async function getTweets(count) {
-  return [...Array(count)].map(getTweet);
+  return delay(1000, () => [...Array(count)].map(getTweet));
 }

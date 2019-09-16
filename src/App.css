@@ -31,3 +31,8 @@ body,
 .App-column--right {
   align-items: flex-start;
 }
+
+.Icon--loadingLarge {
+  display: block;
+  margin: 0 auto;
+}
