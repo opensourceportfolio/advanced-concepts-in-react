@@ -27,25 +27,19 @@ class App extends React.Component {
 
     return (
       <Router>
-        <div>
-          <NavBar user={user}></NavBar>
-          <Route
-            path="/"
-            exact
-            render={() => <Twitter user={user}></Twitter>}
-          />
-          <Route path="/lesson/proptypes" exact component={PropTypes} />
-          <Route path="/lesson/fragments" exact component={Fragment} />
-          <Route path="/lesson/forward-ref" exact component={ForwardRef} />
-          <Route
-            path="/lesson/error-boundaries"
-            exact
-            component={ErrorBoundaries}
-          />
-          <Route path="/lesson/context" exact component={Context} />
-          <Route path="/lesson/portals" exact component={Portal} />
-          <Route path="/lesson/render-props" exact component={RenderProps} />
-        </div>
+        <NavBar user={user}></NavBar>
+        <Route path="/" exact render={() => <Twitter user={user}></Twitter>} />
+        <Route path="/lesson/proptypes" exact component={PropTypes} />
+        <Route path="/lesson/fragments" exact component={Fragment} />
+        <Route path="/lesson/forward-ref" exact component={ForwardRef} />
+        <Route
+          path="/lesson/error-boundaries"
+          exact
+          component={ErrorBoundaries}
+        />
+        <Route path="/lesson/context" exact component={Context} />
+        <Route path="/lesson/portals" exact component={Portal} />
+        <Route path="/lesson/render-props" exact component={RenderProps} />
       </Router>
     );
   }

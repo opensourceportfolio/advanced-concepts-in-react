@@ -33,6 +33,29 @@ const example1 = `class Timeline extends React.Component {
 }
 `;
 
+const example2 = `class Timeline extends React.Component {
+  render() {
+    return (
+      <>
+        <Tweet id={1} />
+        <Tweet id={2} />
+      </>
+    )
+  }
+}
+`;
+
+const answerKeyCode = `<React.Fragment>
+  <div className="Timeline">
+    {tweets.map((tweet, i) => {
+      return <Tweet key={i} {...tweet} />;
+    })}
+  </div>
+  <Button onClick={onLoadMoreHandler} className="Timeline-loadMore">
+    Load more
+  </Button>
+</React.Fragment>`;
+
 export default function Fragment() {
   return (
     <div className="Lesson">
@@ -68,12 +91,25 @@ export default function Fragment() {
         </CollapsibleMenu>
       </section>
       <section>
-        <h2>More Information</h2>
-        <p>?</p>
+        <h2>Examples #2</h2>
+        <p>There is a short form you can use if you like</p>
+        <CollapsibleMenu id="Collapsible--shortForm" title="Multiple nodes">
+          <SyntaxHighlighter language="jsx">{example2}</SyntaxHighlighter>
+        </CollapsibleMenu>
       </section>
       <section>
         <h2>Exercise</h2>
-        <p>?</p>
+        <p>
+          Our <code>Timeline</code> has an unnecessary nesting. Let's fix that.
+        </p>
+      </section>
+      <section>
+        <h2>Answer key</h2>
+        <CollapsibleMenu id="Collapsible--answerKey" title="Answer key">
+          <SyntaxHighlighter language="jsx">
+            {answerKeyCode}
+          </SyntaxHighlighter>
+        </CollapsibleMenu>
       </section>
     </div>
   );

@@ -10,10 +10,10 @@ export default function Timeline({ tweets, onLoadMoreHandler }) {
         {tweets.map((tweet, i) => {
           return <Tweet key={i} {...tweet} />;
         })}
-        <Button onClick={onLoadMoreHandler} className="Timeline-loadMore">
-          Load more
-        </Button>
       </div>
+      <Button onClick={onLoadMoreHandler} className="Timeline-loadMore">
+        Load more
+      </Button>
     </div>
   );
 }
