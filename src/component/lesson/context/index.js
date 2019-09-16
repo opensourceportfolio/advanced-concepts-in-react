@@ -49,12 +49,49 @@ function UserProvider({ children }) {
   return <Provider>{children}</Provider>;
 }
 
-export { Consumer, Provider, UserProvider };`
+export { Consumer, Provider, UserProvider };`;
 
 const answerKeyUserProvider2 = `// Update our component to grab the user
 <UserLoader>
   {user => <Provider value={user}>{children}</Provider>}
-</UserLoader>`
+</UserLoader>`;
+
+const answerKeyWrapRoutes = `<Router>
+  <UserProvider>
+    <NavBar></NavBar>
+    {/* this can now be simplified since we do not pass any props */}
+    <Route path="/" exact component={Twitter} />
+    ...
+  </UserProvider>
+</Router>`;
+
+const answerKeyNavBarCode = `// NavBar.js
+export default function NavBar() {
+  return (
+    <Consumer>
+      {user => (
+        <NavigationBar.Twitter brandName="Learn" brandUrl="/" position="fixed">
+        ...
+        </NavigationBar.Twitter>
+      )}
+    </Consumer>
+  );
+}`
+
+const answerKeyTwitterCode = `// twitter/index
+render() {
+  const { tweets } = this.state;
+
+  return (
+    <Consumer>
+      {user => (
+        ...
+      )}
+      </Consumer>
+    );
+  }
+}        
+        `
 
 export default function Context() {
   return (
@@ -153,13 +190,15 @@ export default function Context() {
             {answerKeyUserProvider2}
           </SyntaxHighlighter>
           <SyntaxHighlighter language="jsx">
-            {/* {answerKeyRouteCode} */}
+            {answerKeyWrapRoutes}
+          </SyntaxHighlighter>
+          <SyntaxHighlighter language="jsx">
+            {answerKeyNavBarCode}
+          </SyntaxHighlighter>
+          <SyntaxHighlighter language="jsx">
+            {answerKeyTwitterCode}
           </SyntaxHighlighter>
         </CollapsibleMenu>
-        <p>
-          As a bonus, you can now convert <code>App</code> to a stateless
-          component.
-        </p>
       </section>
     </div>
   );

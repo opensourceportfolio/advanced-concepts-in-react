@@ -80,7 +80,11 @@ const answerKeyRouteCode = `<Router>
   {user => (
     <React.Fragment>
       <NavBar user={user}></NavBar>
-      <Route path="/" exact render={app(user)} />
+      <Route
+        path="/"
+        exact
+        render={routeProps => <Twitter {...routeProps} user={user}></Twitter>}
+      />
       <Route path="/lesson/proptypes" exact component={PropTypes} />
       <Route path="/lesson/fragments" exact component={Fragment} />
       <Route path="/lesson/forward-ref" exact component={ForwardRef} />
