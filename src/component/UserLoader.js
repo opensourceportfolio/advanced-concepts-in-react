@@ -21,7 +21,7 @@ export class UserLoader extends React.Component {
     return this.state.user ? (
       this.props.children
     ) : (
-      <span class="Icon Icon--loadingLarge" aria-label="Loading"></span>
+      <span className="Icon Icon--loadingLarge" aria-label="Loading"></span>
     );
   }
 }

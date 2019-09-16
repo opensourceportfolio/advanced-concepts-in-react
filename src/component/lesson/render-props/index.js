@@ -1,5 +1,6 @@
 import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import CollapsibleMenu from "../../CollapsibleMenu";
 import "../lesson.css";
 
 const initialScenarioCode = `import React from "react";
@@ -57,6 +58,53 @@ const childrenPropUsageCode = `<ClickTracker>
   {count => <h1>I have been clicked {count} number of times</h1>}
 </ClickTracker>`;
 
+const answerKeyUserLoaderCode = `// our children prop is now a function
+return this.state.user ? (
+  this.props.children(this.state.user)
+) : (
+  <span class="Icon Icon--loadingLarge" aria-label="Loading"></span>
+);`;
+
+const answerKeyMountCode = `// We do not need to fetch data on mount in App
+// componentDidMount() {
+//   authenticateUser().then(user => {
+//     this.setState({
+//       user
+//     });
+//   });
+// }
+  `;
+
+const answerKeyAppCode = `// Our app becomes simple now.
+const app = () => <Twitter user={user}></Twitter>;
+`;
+
+const answerKeyRouteCode = `<Router>
+<UserLoader>
+  {user => (
+    <React.Fragment>
+      <NavBar user={user}></NavBar>
+      <Route path="/" exact render={app} />
+      <Route path="/lesson/proptypes" exact component={PropTypes} />
+      <Route path="/lesson/fragments" exact component={Fragment} />
+      <Route path="/lesson/forward-ref" exact component={ForwardRef} />
+      <Route
+        path="/lesson/error-boundaries"
+        exact
+        component={ErrorBoundaries}
+      />
+      <Route path="/lesson/context" exact component={Context} />
+      <Route path="/lesson/portals" exact component={Portal} />
+      <Route
+        path="/lesson/render-props"
+        exact
+        component={RenderProps}
+      />
+    </React.Fragment>
+  )}
+</UserLoader>
+</Router>`;
+
 export default function RenderProps() {
   return (
     <div className="Lesson">
@@ -108,9 +156,27 @@ export default function RenderProps() {
         <h2>Exercise</h2>
         <p>
           Wouldn't it be great to see a spinner while the user is loading? Turns
-          out we have a component for that already. Unfortunately it isn't very
-          reusable. Let's fix that using render props.
+          out we have a component for that already. It is called{" "}
+          <code>UserLoader</code>. Unfortunately it isn't very reusable. Let's
+          fix that using render props and wrap our app in it.
         </p>
+      </section>
+      <section>
+        <h2>Answer key</h2>
+        <CollapsibleMenu id="Collapsible--answerKey" title="Answer key">
+          <SyntaxHighlighter language="jsx">
+            {answerKeyUserLoaderCode}
+          </SyntaxHighlighter>
+          <SyntaxHighlighter language="jsx">
+            {answerKeyMountCode}
+          </SyntaxHighlighter>
+          <SyntaxHighlighter language="jsx">
+            {answerKeyAppCode}
+          </SyntaxHighlighter>
+          <SyntaxHighlighter language="jsx">
+            {answerKeyRouteCode}
+          </SyntaxHighlighter>
+        </CollapsibleMenu>
       </section>
     </div>
   );
