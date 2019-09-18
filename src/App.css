@@ -36,3 +36,8 @@ body,
   display: block;
   margin: 0 auto;
 }
+
+.Message {
+  margin: 0 auto;
+  width: 1000px;
+}
