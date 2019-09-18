@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import User from "@twitter/feather-component-user-react";
 import * as NavigationBar from "@twitter/feather-component-navigation-bar-react";
-import "@twitter/feather-component-navigation-bar/dist/css/feather-component-navigation-bar.css";
 import "@twitter/feather-core/dist/css/feather-core.css";
+import "@twitter/feather-component-navigation-bar/dist/css/feather-component-navigation-bar.css";
 
 export default function NavBar({ user }) {
   return (
@@ -34,12 +34,14 @@ export default function NavBar({ user }) {
       {user && (
         <NavigationBar.ItemGroup align="end">
           <NavigationBar.Item>
-            {user && <User
-              layout="horizontal"
-              name={user.name.first}
-              profileImageUrl={user.picture.thumbnail}
-              screenName={`@${user.login.username}`}
-            />}
+            {user && (
+              <User
+                layout="horizontal"
+                name={user.name.first}
+                profileImageUrl={user.picture.thumbnail}
+                screenName={`@${user.login.username}`}
+              />
+            )}
           </NavigationBar.Item>
         </NavigationBar.ItemGroup>
       )}

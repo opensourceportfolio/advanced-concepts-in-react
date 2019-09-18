@@ -35,6 +35,50 @@ const errorBoundedTwitterCode = `<ErrorBoundary>
   <Twitter />
 </ErrorBoundary>`;
 
+const exerciseLogUppercaseNamesCode = `// twitter/index
+render() {
+  const { tweets: ts } = this.state;
+  const { user } = this.props;
+
+  const tweets =
+    ts.length > 0
+      ? ts.map(t => ({
+          ...t,
+          user: {
+            ...t.user,
+            name: t.user.name[0].toUpperCase() + t.users.name.slice(1)
+          }
+        }))
+      : ts;
+  ...
+}`;
+
+const answerKeyErrorBoundaryComponentCode = `export class ErrorBoundary extends React.Component {
+  state = { hasError: false };
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+
+  render() {
+    return this.state.hasError ? (
+      <h1>Something went wrong.</h1>
+    ) : (
+      this.props.children
+    );
+  }
+}`;
+
+const answerKeyAppRouteCode = `<Route
+  path="/"
+  exact
+  render={routeProps => (
+    <ErrorBoundary>
+      <Twitter {...routeProps} user={user}></Twitter>
+    </ErrorBoundary>
+  )}
+/>`;
+
 export default function ErrorBoundaries() {
   return (
     <div className="Lesson">
@@ -61,7 +105,6 @@ export default function ErrorBoundaries() {
           <li>
             Static method called <code>getDerivedStateFromError</code>. Use it
             to update the state for the next render.
-            <code>ref</code> to be passed in
             <SyntaxHighlighter language="jsx">
               {getDerivedStateFromErrorCode}
             </SyntaxHighlighter>
@@ -95,12 +138,27 @@ export default function ErrorBoundaries() {
         </CollapsibleMenu>
       </section>
       <section>
-        <h2>More Information</h2>
-        <p>?</p>
+        <h2>Exercise</h2>
+        <p>Wouldn't it be nice to have the names capitalized? Let's do that.</p>
+        <SyntaxHighlighter language="jsx">
+          {exerciseLogUppercaseNamesCode}
+        </SyntaxHighlighter>
+        <p>Oh No! it's throwing an exception.</p>
       </section>
       <section>
-        <h2>Exercise</h2>
-        <p>?</p>
+        <h2>Answer key</h2>
+        <CollapsibleMenu
+          id="Collapsible--answerKeyErrorBoundary"
+          title="Answer key"
+        >
+          <SyntaxHighlighter language="jsx">
+            {answerKeyErrorBoundaryComponentCode}
+          </SyntaxHighlighter>
+          <p>Don't forget to wrap your application in the error boundary</p>
+          <SyntaxHighlighter language="jsx">
+            {answerKeyAppRouteCode}
+          </SyntaxHighlighter>
+        </CollapsibleMenu>
       </section>
     </div>
   );
