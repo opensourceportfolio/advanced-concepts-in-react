@@ -37,6 +37,7 @@ class App extends React.Component {
     return (
       <Router>
         <NavBar user={user}></NavBar>
+        <div className="Message" />
         <Route
           path="/"
           exact

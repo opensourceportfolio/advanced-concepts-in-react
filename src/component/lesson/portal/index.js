@@ -48,12 +48,14 @@ export default function Portal() {
         </p>
       </section>
       <section>
-        <h2>More Information</h2>
-        <p>?</p>
-      </section>
-      <section>
         <h2>Exercise</h2>
-        <p>?</p>
+        <p>
+          Let's show a success message when someone manages to tweet. We will
+          show the message right under the <code>NavBar</code>. We already have
+          a <code>SuccessMessage</code> component and <code>hasTweeted</code>
+          flag in <code>Twitter</code> app. Let's integrate it. We will use
+          <code>.Message</code> div to hold our callout.
+        </p>
       </section>
     </div>
   );

@@ -11,7 +11,8 @@ export default class Twitter extends React.Component {
   constructor() {
     super();
     this.state = {
-      tweets: []
+      tweets: [],
+      hasTweeted: false
     };
   }
 
@@ -28,7 +29,7 @@ export default class Twitter extends React.Component {
       text: tweetText
     };
 
-    this.setState({ tweets: [newTweet, ...tweets] });
+    this.setState({ tweets: [newTweet, ...tweets], hasTweeted: true });
   };
 
   _onLoadMoreHandler = () => {
