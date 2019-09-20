@@ -38,7 +38,6 @@ const errorBoundedTwitterCode = `<ErrorBoundary>
 const exerciseLogUppercaseNamesCode = `// twitter/index
 render() {
   const { tweets: ts } = this.state;
-  const { user } = this.props;
 
   const tweets =
     ts.length > 0

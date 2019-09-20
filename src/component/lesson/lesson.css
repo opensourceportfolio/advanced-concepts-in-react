@@ -6,3 +6,11 @@
 .Lesson section + section {
   padding-bottom: 20px;
 }
+
+.Lesson > section > p > code {
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: rgb(221, 74, 104);
+  padding: 0 5px;
+}
