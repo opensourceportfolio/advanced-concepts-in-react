@@ -115,8 +115,9 @@ export default function RenderProps() {
         <p>
           Sometimes multiple components want to access the same state and
           inherit similar behaviour. We do this through component composition.
-          For example, take the following scenario:
         </p>
+
+        <p>For example, take the following scenario:</p>
         <SyntaxHighlighter language="jsx">
           {initialScenarioCode}
         </SyntaxHighlighter>

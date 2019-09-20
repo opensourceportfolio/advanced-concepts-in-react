@@ -61,6 +61,7 @@ const answerKeyTimelineCode = `Timeline.propTypes = {
 
 const answerKeyTweetWriterCode = `TweetWriter.propTypes = {
   onTweet: PropTypes.func.isRequired,
+  forwardRef: PropTypes.object,
 }`;
 
 const answerKeyCollapsibleMenuCode = `CollapsibleMenu.propTypes = {
@@ -70,7 +71,7 @@ const answerKeyCollapsibleMenuCode = `CollapsibleMenu.propTypes = {
 };`;
 
 const answerKeyNavBarCode = `NavBar.propTypes = {
-  user: PropTypes.object.isRequired,
+  user: PropTypes.object,
 }`;
 
 export default function PropTypes() {

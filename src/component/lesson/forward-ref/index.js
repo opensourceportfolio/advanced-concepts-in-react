@@ -46,18 +46,16 @@ const ref = React.createRef();
 <TwitterButton text="Tweet" ref={ref} />;`;
 
 const answerKeyTweetWriterCode = `// we need to create a component that forwards the refs
-const TweetWriterComponent = React.forwardRef((props, ref) => {
-  return <TweetWriter {...props} forwardRef={ref}></TweetWriter>
-})
-
-export default TweetWriterComponent;`;
+export default React.forwardRef((props, ref) => {
+  return <TweetWriter {...props} forwardRef={ref}></TweetWriter>;
+});`;
 
 const answerKeyTwitterHandlerCode = `// twitter/index.js
 tweetWriterRef = React.createRef();`;
 
 const answerKeyTwitterRefCode = `<TweetWriter onTweet={this._onTweetHandler} ref={this.tweetWriterRef}></TweetWriter>`;
 
-const answerKeyTwitterMountCode = `componentDidMount = () => {
+const answerKeyTwitterMountCode = `componentDidUpdate = () => {
   this._onLoadMoreHandler();
   this.tweetWriterRef.current.focus();
 };`;

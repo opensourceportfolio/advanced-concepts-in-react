@@ -23,7 +23,7 @@ class App extends React.Component {
     this.state = { user: null };
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     authenticateUser().then(user => {
       this.setState({
         user
